@@ -1,0 +1,31 @@
+CLASS Main IS
+    METHOD main IS BEGIN
+    	IF TRUE THEN
+	    	1.print;
+	    END IF
+
+    	IF NOT TRUE THEN
+	    	'e'.print;
+	    END IF
+
+    	IF NOT FALSE THEN
+	    	2.print;
+	    END IF
+
+    	IF FALSE THEN
+	    	'e'.print;
+    	ELSEIF FALSE THEN
+	    	'e'.print;
+    	ELSE
+	    	'3'.print;
+	    END IF
+
+    	IF FALSE THEN
+	    	'e'.print;
+    	ELSEIF 2 = 2 THEN
+	    	'4'.print;
+	    END IF
+
+    	'5'.print;
+    END METHOD
+END CLASS

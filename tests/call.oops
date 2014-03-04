@@ -1,0 +1,10 @@
+CLASS Main IS
+    METHOD main IS BEGIN
+        test();
+        test();
+    END METHOD
+    
+    METHOD test IS BEGIN
+        123.print;
+    END METHOD
+END CLASS

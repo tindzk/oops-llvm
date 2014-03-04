@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: libs/antlr-4.1-complete.jar libs/scalalogging-slf4j_2.10-1.0.1.jar libs/slf4j-api-1.7.5.jar libs/slf4j-simple-1.7.5.jar libs/scala-library.jar libs/scala-reflect.jar libs/scallop_2.10-0.9.4.jar libs/bridj-0.7-20140116.214308-55-unix-only.jar
+Created-By: 1.7.0_06 (Oracle Corporation)
+

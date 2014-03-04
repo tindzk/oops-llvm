@@ -1,0 +1,49 @@
+| Output:
+| A |
+| B |
+| C ||
+| D |||
+| E |||||
+| F ||||||||
+| G |||||||||||||
+| H |||||||||||||||||||||
+| I ||||||||||||||||||||||||||||||||||
+| J |||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+CLASS Main IS
+    METHOD main IS
+        i: Int;
+    BEGIN
+        i:=1;
+        WHILE i<11 DO
+            ('A' + i - 1).print;
+            ' '.print;
+            WRITELN(fib(i));
+            i:=i+1;
+        END WHILE
+    END METHOD
+    
+    METHOD fib(x: Int): Int IS BEGIN
+        RETURN fib2(1,1,x-1);
+    END METHOD
+
+    METHOD fib2(s1, s2: Int; x: Int): Int IS BEGIN
+        IF x=0 THEN RETURN s1; 
+        ELSE RETURN fib2(s2, s1+s2, x-1);
+        END IF
+        'err'.print;
+        RETURN 0;
+    END METHOD
+    
+    METHOD WRITELN(c: Int) IS 
+        i: Int;
+    BEGIN
+        i:=0;
+        WHILE i<c DO
+            '|'.print;
+            i:=i+1;
+        END WHILE
+        '\n'.print; 
+    END METHOD
+    
+END CLASS

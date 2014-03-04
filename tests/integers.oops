@@ -1,0 +1,14 @@
+CLASS Main IS
+    METHOD main IS
+    	x: Int;
+    	y: Int;
+    BEGIN
+    	x := 123;
+        x.print;
+
+        123.print;
+
+        y := x;
+        y.print;
+    END METHOD
+END CLASS

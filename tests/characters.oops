@@ -1,0 +1,22 @@
+CLASS Main IS
+    METHOD main IS
+    	x: Char;
+    BEGIN
+    	x := '1';
+        x.print;
+
+    	x := x + 1;
+        x.print;
+
+        '3'.print;
+
+        x := '3' + 1;
+        x.print;
+
+        ('4' + 1).print;
+
+        x := 2;
+        x := '4' + x;
+        x.print;
+    END METHOD
+END CLASS

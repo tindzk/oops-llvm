@@ -1,0 +1,9 @@
+CLASS Main IS
+	METHOD main IS BEGIN
+		IF NULL ISA Obj THEN
+			'ERR'.print;
+		ELSE
+			'OK'.print;
+		END IF
+	END METHOD
+END CLASS

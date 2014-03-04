@@ -1,0 +1,31 @@
+CLASS Main IS
+    METHOD main IS
+	    a: A;
+    BEGIN
+        a := newA;
+        a.init;
+        a.b.str.print;
+    END METHOD
+
+    METHOD newA : A IS BEGIN
+        RETURN NEW A;
+    END METHOD
+END CLASS
+
+CLASS A IS
+    b: B;
+
+    METHOD init IS BEGIN
+        b := NEW B;
+        b.init;
+    END METHOD
+END CLASS
+
+CLASS B IS
+    str: Str;
+    
+    METHOD init IS
+    BEGIN
+    	str := 'OK';
+    END METHOD
+END CLASS

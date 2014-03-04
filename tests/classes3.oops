@@ -1,0 +1,32 @@
+CLASS Main IS
+    METHOD main IS
+	    a: A;
+    BEGIN
+        a := NEW A;
+        a.init;
+        a.value.print;
+        a.b.value.print;
+        '!'.print;
+    END METHOD
+END CLASS
+
+CLASS A IS
+    b: B;
+    value: Char;
+
+    METHOD init IS BEGIN
+        value := 'O';
+
+        b := NEW B;
+        b.init;
+    END METHOD
+END CLASS
+
+CLASS B IS
+    value: Char;
+    
+    METHOD init IS
+    BEGIN
+    	value := 'K';
+    END METHOD
+END CLASS

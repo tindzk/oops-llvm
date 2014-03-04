@@ -1,0 +1,14 @@
+CLASS Main IS
+    METHOD main IS
+        i: Int;
+    BEGIN
+        write(12);
+
+        i := 3;
+        write(i);
+    END METHOD
+    
+    METHOD write(c: Int) IS BEGIN
+    	c.print;
+	END METHOD
+END CLASS

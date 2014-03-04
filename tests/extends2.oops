@@ -1,0 +1,43 @@
+| Static and dynamic binding.
+CLASS A IS
+    a : Char;
+  
+    METHOD print IS
+    BEGIN
+        a.print;
+    END METHOD
+END CLASS
+
+CLASS B EXTENDS A IS
+    a : Char;
+  
+    METHOD print IS
+    BEGIN
+        a.print;
+    END METHOD
+    
+    METHOD printBase IS
+    BEGIN
+        BASE.print;
+        BASE.a.print;
+    END METHOD
+END CLASS
+
+CLASS Main IS
+    METHOD main IS
+        a : A;
+        b : B;
+        c : A;
+    BEGIN
+        a := NEW A;
+        b := NEW B;
+        a.a := 'A';
+        b.a := 'B';
+        c := b; | Down-casting.
+        c.a := a.a;
+        a.print;     | A
+        b.print;     | B
+        c.print;     | B
+        b.printBase; | AA
+    END METHOD
+END CLASS

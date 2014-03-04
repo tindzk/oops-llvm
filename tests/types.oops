@@ -1,0 +1,12 @@
+CLASS Main IS
+	METHOD main IS
+		a: Obj;
+		b: Main;
+	BEGIN
+		a := SELF;
+
+		IF a ISA Main THEN
+			'OK'.print;
+		END IF
+	END METHOD
+END CLASS

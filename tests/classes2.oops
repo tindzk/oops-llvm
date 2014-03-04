@@ -1,0 +1,9 @@
+CLASS Main IS
+    attribut: Char;
+
+    METHOD main IS
+    BEGIN
+        attribut := 'A';
+        attribut.print;
+    END METHOD
+END CLASS

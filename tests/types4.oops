@@ -1,0 +1,53 @@
+CLASS A IS
+	METHOD a IS BEGIN END METHOD
+	METHOD b IS BEGIN END METHOD
+END CLASS
+
+CLASS B EXTENDS A IS
+	METHOD c IS BEGIN END METHOD
+	METHOD d IS BEGIN END METHOD
+END CLASS
+
+CLASS Main IS
+	METHOD main IS
+		self: Obj;
+		a: Obj;
+		b: Obj;
+	BEGIN
+		self := SELF;
+		a := NEW A;
+		b := NEW B;
+
+		IF self ISA Obj THEN
+			'A'.print;
+		END IF
+
+		IF NOT(self ISA A) THEN
+			'B'.print;
+		END IF
+
+		IF a ISA A THEN
+			'C'.print;
+		END IF
+
+		IF NOT(a ISA B) THEN
+			'D'.print;
+		END IF
+
+		IF b ISA Obj THEN
+			'E'.print;
+		END IF
+
+		IF b ISA B THEN
+			'F'.print;
+		END IF
+
+		IF b ISA A THEN
+			'G'.print;
+		END IF
+
+		IF SELF ISA Main THEN
+			'H'.print;
+		END IF
+	END METHOD
+END CLASS

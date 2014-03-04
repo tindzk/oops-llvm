@@ -1,0 +1,12 @@
+CLASS Main IS
+    METHOD main IS
+    	i: Int;
+    BEGIN
+    	i := 5;
+    	WHILE i > 0 DO
+    		i.print;
+    		'\n'.print;
+    		i := i - 1;
+    	END WHILE
+    END METHOD
+END CLASS

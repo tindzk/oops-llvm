@@ -1,0 +1,14 @@
+CLASS Main IS
+    METHOD main IS
+    	x: Str;
+    BEGIN
+        x := '123abc';
+        x.print;
+
+        '456'.print;
+
+        | TODO Implement UTF-8 strings.
+        | x := 'a®€a';
+        | x.print;
+    END METHOD
+END CLASS

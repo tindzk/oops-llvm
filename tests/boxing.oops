@@ -1,0 +1,10 @@
+CLASS Main IS
+    METHOD main IS
+        x, y: Char;
+    BEGIN
+        x := 'A'; | Box character 'A'.
+        y := x+1; { Unbox x, add 1. Then, create new boxed object. }
+        y := 'Z'; { Reassign y's value to new boxed object. }
+        x.print;
+    END METHOD
+END CLASS

@@ -1,0 +1,38 @@
+CLASS A IS
+    a : Char;
+
+    METHOD init IS
+    BEGIN
+        a := 'C';
+    END METHOD
+
+    METHOD print IS
+    BEGIN
+        a.print;
+    END METHOD
+END CLASS
+
+CLASS B EXTENDS A IS
+    a : Char;
+    b : Char;
+
+    METHOD print IS
+    BEGIN
+        a.print; | A
+        b.print; | B
+        BASE.a.print; | C
+        BASE.print; | C
+    END METHOD
+END CLASS
+
+CLASS Main IS
+    METHOD main IS
+        b : B;
+    BEGIN
+        b := NEW B;
+        b.init;
+        b.a := 'A';
+        b.b := 'B';
+        b.print;
+    END METHOD
+END CLASS

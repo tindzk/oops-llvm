@@ -1,0 +1,25 @@
+CLASS Main IS
+    METHOD main IS
+        i: Int;
+        j: Int;
+    BEGIN
+        i := fib();
+        i.print;
+
+        i := fib2();
+        i.print;
+
+        fib().print;
+        fib2().print;
+    END METHOD
+    
+    METHOD fib: Int IS BEGIN
+        RETURN 12;
+    END METHOD
+
+    METHOD fib2: Int IS BEGIN
+        IF TRUE THEN RETURN 3;
+        ELSE RETURN 2;
+        END IF
+    END METHOD
+END CLASS

@@ -1,0 +1,12 @@
+CLASS Main IS
+    METHOD main IS
+        i: Integer;
+    BEGIN
+        fib(3);
+    END METHOD
+    
+    METHOD fib(x: Integer): Integer IS BEGIN
+        RETURN 5;
+        'a'.print;
+    END METHOD
+END CLASS
