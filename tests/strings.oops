@@ -1,9 +1,11 @@
 CLASS Main IS
     METHOD main IS
-    	x: Str;
+        x: Str;
+        y: Str;
     BEGIN
         x := '123abc';
-        x.print;
+        y := x;
+        y.print;
 
         '456'.print;
 

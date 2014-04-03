@@ -57,9 +57,14 @@ case class StringLiteralExpression(value: String, var _position: Position = new 
     tree.println(this.value)
   }
 
-  override def generateCode(code: CodeContext, deref: Boolean) =
-    LLVMHelpers.buildConstStringVariable(code.module,
-      LLVMHelpers.getLLVMString(code.sem, code.module, value))
+  override def generateCode(code: CodeContext, deref: Boolean) = {
+    if (deref) {
+      code.builder.buildLoad(this.generateCode(code, false), "")
+    } else {
+      LLVMHelpers.buildConstStringVariable(code.module,
+        LLVMHelpers.getLLVMString(code.sem, code.module, value))
+    }
+  }
 }
 
 case class NullLiteralExpression(var _position: Position = new Position()) extends LiteralExpression(Types.nullType, _position) {

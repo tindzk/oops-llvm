@@ -42,12 +42,13 @@ class AssignStatement(var leftOperand: Expression, var rightOperand: Expression)
 
   override def generateCode(code: CodeContext) {
     val left = this.leftOperand.resolvedType()
+    val right = this.rightOperand.resolvedType()
 
     val leftValue = this.leftOperand.generateCode(code, false)
     val rightValue = this.rightOperand.generateCode(code, true)
 
     val castRightValue =
-      if (!rightOperand.resolvedType().mustEmbed() && !(this.leftOperand.resolvedType() eq this.rightOperand.resolvedType())) {
+      if (!right.mustEmbed() && !(left eq right)) {
         /* Down-cast the right object if necessary. */
         code.builder.buildBitCast(rightValue, left.getLLVMType().pointerType(), "")
       } else {

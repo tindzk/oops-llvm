@@ -51,12 +51,7 @@ class Types {
   final val charWrapper = new TypeWrapSymbol(new Identifier("monty.stdlib.Char"), Types.int32Type)
   final val byteWrapper = new TypeWrapSymbol(new Identifier("monty.stdlib.Byte"), Types.int8Type)
   final val boolWrapper = new TypeWrapSymbol(new Identifier("monty.stdlib.Bool"), Types.int1Type)
-  final val stringWrapper = new TypeWrapSymbol(new Identifier("monty.stdlib.Str"), strStruct) {
-    override def assign(code: CodeContext, leftOperand: Value, rightOperand: Value) {
-      val right = code.builder.buildLoad(rightOperand, "")
-      code.builder.buildStore(right, leftOperand)
-    }
-  }
+  final val stringWrapper = new TypeWrapSymbol(new Identifier("monty.stdlib.Str"), strStruct)
 
   intWrapper.operations += {
     val x = new MethodSymbol(new Identifier("print"))
