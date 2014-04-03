@@ -31,7 +31,7 @@ class CodeContext(jit: Boolean = false) {
   var currentFunction : Value = null
 
   def writeBitcode(path: String) {
-    module.writeBitcodeToFile("/tmp/oops-llvm.bc")
+    module.writeBitcodeToFile(path)
   }
 
   def dump() {
