@@ -12,6 +12,7 @@ class TypeWrapSymbol(identifier: Identifier) extends ScopedType {
 
   override def ident() = identifier
   override def mustEmbed() = true
+  override def isComposite() = this.coveringType.declaration.get.isComposite()
 
   /* TODO Merge `OperatorSymbol' and `MethodSymbol' (-> FunctionSymbol). */
   var operators = new ListBuffer[OperatorSymbol]
