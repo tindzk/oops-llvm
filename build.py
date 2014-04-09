@@ -1,8 +1,4 @@
 #!/usr/bin/env python
-
-# Ensure that scala-library.jar and scala-reflect.jar were copied from
-# /usr/share/lib/ to libs/.
-
 import fnmatch, os, sys, subprocess
 
 def run(cmd):
@@ -28,6 +24,8 @@ def matchFiles(path, pattern):
 	return paths
 
 jarFiles = matchFiles('libs/', '*.jar')
+jarFiles += ['/usr/share/scala/lib/scala-library.jar',
+		'/usr/share/scala/lib/scala-reflect.jar']
 
 if not os.path.exists("build/"):
 	os.makedirs("build/")
