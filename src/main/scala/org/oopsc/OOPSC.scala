@@ -4,7 +4,7 @@ import com.typesafe.scalalogging.slf4j.LazyLogging
 import org.rogach.scallop._
 
 class Conf(args : Seq[String]) extends ScallopConf(args) {
-  version(s"oopsc ${OOPSC.Version} (c) 2014 Monty Team")
+  version(s"oopsc ${OOPSC.Version} (c) 2014 Tim Nieradzik")
   banner("""Usage: java -jar oopsc.jar [OPTION]... [input] [<output>]
            |oopsc is an OOPS compiler.
            |
