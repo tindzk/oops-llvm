@@ -16,10 +16,10 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
-import com.typesafe.scalalogging.slf4j.Logging
+import com.typesafe.scalalogging.slf4j.LazyLogging
 
 @RunWith(value = classOf[Parameterized])
-class TestSuite(var path: String) extends Logging {
+class TestSuite(var path: String) extends LazyLogging {
   @Test
   def testGrammar {
     val stream = new FileInputStream(this.path)

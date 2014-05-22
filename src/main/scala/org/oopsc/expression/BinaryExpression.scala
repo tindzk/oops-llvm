@@ -4,7 +4,7 @@ import org.oopsc._
 import org.oopsc.statement._
 import org.oopsc.symbol.ClassType
 import org.oopsc.symbol._
-import com.typesafe.scalalogging.slf4j.Logging
+import com.typesafe.scalalogging.slf4j.LazyLogging
 import org.llvm.binding.LLVMLibrary.LLVMIntPredicate
 
 object BinaryExpression extends Enumeration {
@@ -12,7 +12,7 @@ object BinaryExpression extends Enumeration {
   val EQ, NEQ, GT, GTEQ, LT, LTEQ, PLUS, MINUS, MUL, DIV, MOD, AND, OR = Value
 }
 
-class BinaryExpression(var leftOperand: Expression, var operator: BinaryExpression.Operator, var rightOperand: Expression) extends Expression(leftOperand.position) with Logging {
+class BinaryExpression(var leftOperand: Expression, var operator: BinaryExpression.Operator, var rightOperand: Expression) extends Expression(leftOperand.position) with LazyLogging {
   import BinaryExpression._
 
   private var sem: SemanticAnalysis = null

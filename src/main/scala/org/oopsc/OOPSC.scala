@@ -1,6 +1,6 @@
 package org.oopsc
 
-import com.typesafe.scalalogging.slf4j.Logging
+import com.typesafe.scalalogging.slf4j.LazyLogging
 import org.rogach.scallop._
 
 class Conf(args : Seq[String]) extends ScallopConf(args) {
@@ -22,7 +22,7 @@ class Conf(args : Seq[String]) extends ScallopConf(args) {
   val outputFile = trailArg[String]("output", descr = "path for saving LLVM bitcode", required = false)
 }
 
-object OOPSC extends Logging {
+object OOPSC extends LazyLogging {
   val Version = "0.1"
 
   def main(args: Array[String]) {
